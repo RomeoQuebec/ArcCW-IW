@@ -127,19 +127,12 @@ SWEP.WorldModelOffset = {
     ang = Angle(-10, 0, 180)
 }
 
---local changed_animations = {
---  "fire" = "fire_ar",
---  "idle" = "idle_ar",
---  "holster" = "holster_ar",
---  "bash" = "melee_ar",
---  "reload" = "reload_ar",
---  "reload_empty" = "reload_empty_ar",
---}
---SWEP.Hook_TranslateAnimation = function(wep, anim)
---  if wep:Attachments[x]Installed == "ar_mode" and (changed_animations[anim]) then //idk if this is correct
---    return changed_animations[anim]
---  end
---end
+SWEP.Hook_TranslateAnimation = function(wep, anim)
+    local fucking = wep.Attachments[1].Installed == "ar_mode"
+        if fucking and wep:GetCurrentFiremode().Mode == 1 then
+        return anim .. "_ar"
+    end
+end
 
 SWEP.MirrorVMWM = true
 SWEP.GuaranteeLaser = true
@@ -279,13 +272,13 @@ SWEP.Animations = {
     ["1_to_2"] = {
         Source = "toggle_on",
         SoundTable = {
-		{s = "weapons/foley/pickup/weap_pickup_rattle_04.wav", 	t = 0.1},
+		{s = "weapons/foley/wpfoly_rip_toggle_on_v1.wav", 	t = 0.1},
     },
     },
     ["2_to_1"] = {
         Source = "toggle_off",
         SoundTable = {
-		{s = "weapons/foley/pickup/weap_pickup_rattle_04.wav", 	t = 0.1},
+		{s = "weapons/foley/wpfoly_rip_toggle_off_v1.wav", 	t = 0.1},
         },
     },
     ["fire"] = {
@@ -301,7 +294,7 @@ SWEP.Animations = {
         ShellEjectAt = 0,
     },
     ["reload_empty_ar"] = {
-        Source = "reload_empty_ar",
+        Source = "reload_ar",
         SoundTable = {
 		{s = "weapons/foley/wpfoly_rip_reload_clipout_v1.wav", 	t = 0.5},
         {s = "weapons/foley/wpfoly_rip_reload_clipin_v1.wav", 	t = 1.65},				
@@ -337,7 +330,7 @@ SWEP.Animations = {
         LHIKEaseOut = 0.25,		
     },
     ["reload_empty"] = {
-        Source = "reload_empty",
+        Source = "reload",
         SoundTable = {
 		{s = "weapons/foley/wpfoly_rip_reload_clipout_v1.wav", 	t = 0.5},
         {s = "weapons/foley/wpfoly_rip_reload_clipin_v1.wav", 	t = 1.65},				

@@ -1,0 +1,5 @@
+"UnlitGeneric"
+{
+	"$basetexture" "fucking/IW/weapons/RPR_EVO/weapon_tritvial_white"
+	"$nocull" 1
+}

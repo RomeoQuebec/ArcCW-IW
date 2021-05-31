@@ -1,0 +1,7 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "fucking/IW/weapons/RPR_EVO/weapon_ripper_rare_c_weapon_ripper_rare_sg_packed_cs"
+	"$normalmap" "fucking/IW/weapons/RPR_EVO/weapon_ripper_rare_n_caa20b0f_packed_nog"
+	"$alphatest" 0
+	"$nocull" 1
+}

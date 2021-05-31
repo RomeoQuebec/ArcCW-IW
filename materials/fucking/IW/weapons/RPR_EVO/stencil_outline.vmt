@@ -1,4 +1,4 @@
-"VertexlitGeneric"
+"UnlitGeneric"
 {
 	"$basetexture" "fucking/IW/weapons/RPR_EVO/weapon_ripper_rare_scopescreen_c"
 	"$nocull" 1

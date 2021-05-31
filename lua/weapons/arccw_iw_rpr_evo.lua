@@ -25,7 +25,7 @@ SWEP.ViewModelFOV = 70
 
 SWEP.Damage = 30
 SWEP.DamageMin = 16 -- damage done at maximum range
-SWEP.Range = 35 -- in METRES
+SWEP.Range = 25 -- in METRES
 SWEP.Penetration = 3
 SWEP.DamageType = DMG_BULLET
 SWEP.ShootEntity = nil -- entity to fire, if any
@@ -41,9 +41,9 @@ SWEP.Primary.ClipSize = 32
 SWEP.MaxRecoilBlowback = 3
 
 SWEP.Recoil = 1
-SWEP.RecoilSide = 0.275
-SWEP.RecoilRise = 1.25
-SWEP.VisualRecoilMult = 0.8
+SWEP.RecoilSide = 0.15
+SWEP.RecoilRise = 0.90
+SWEP.VisualRecoilMult = 0.5
 
 SWEP.Delay = 60 / 967 -- 60 / RPM.
 SWEP.Num = 1 -- number of shots per trigger pull.
@@ -57,7 +57,7 @@ SWEP.Firemodes = {
     }
 }
 
-SWEP.AccuracyMOA = 10 -- accuracy in Minutes of Angle. There are 60 MOA in a degree.
+SWEP.AccuracyMOA = 5 -- accuracy in Minutes of Angle. There are 60 MOA in a degree.
 SWEP.HipDispersion = 200 -- inaccuracy added by hip firing.
 SWEP.MoveDispersion = 250
 
@@ -77,10 +77,10 @@ SWEP.ShellScale = 1.25
 SWEP.MuzzleEffectAttachment = 1 -- which attachment to put the muzzle on
 SWEP.CaseEffectAttachment = 2 -- which attachment to put the case effect on
 
-SWEP.SightTime = 0.35
+SWEP.SightTime = 0.23
 
 SWEP.SpeedMult = 1
-SWEP.SightedSpeedMult = 0.75
+SWEP.SightedSpeedMult = 1
 
 SWEP.BarrelLength = 14
 
@@ -130,20 +130,26 @@ SWEP.WorldModelOffset = {
 SWEP.Hook_TranslateAnimation = function(wep, anim)
     local fucking = wep.Attachments[1].Installed == "ar_mode"
     if fucking and wep:GetCurrentFiremode().Mode == 1 then
-        wep.Damage = 34
+        wep.Damage = 45
         wep.DamageMin = 30
+        wep.SightTime = 0.25
+        wep.Range = 45
         wep.IronSightStruct = {
-            Pos = Vector(-3.25, 5.025, -10.90),
+            Pos = Vector(-3.25, 5.025, -10.65),
             Ang = Angle(3, 0, 0),
             Magnification = 2,
             CrosshairInSights = false,
         }
         return anim .. "_ar"
     else
+        wep.Damage = 30
+        wep.DamageMin = 16
+        wep.SightTime = 0.23
+        wep.Range = 25
         wep.IronSightStruct = {
-            Pos = Vector(-3.075, 5.792, -10.2),
-            Ang = Angle(0.5, 0, 0),
-            Magnification = 2,
+            Pos = Vector(-3.233, 5.025, -10.4),
+            Ang = Angle(0, 0.079, 0),
+            Magnification = 1.1,
             CrosshairInSights = false,
         }
     end
@@ -300,8 +306,16 @@ SWEP.Animations = {
         Source = "fire",
         ShellEjectAt = 0,
     },
+    ["fire_iron"] = {
+        Source = "ads_fire",
+        ShellEjectAt = 0,
+    },
     ["fire_ar"] = {
         Source = "fire_ar",
+        ShellEjectAt = 0,
+    },
+    ["fire_iron_ar"] = {
+        Source = "ads_fire_ar",
         ShellEjectAt = 0,
     },
     ["reload_empty_ar"] = {

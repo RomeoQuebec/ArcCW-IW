@@ -267,112 +267,102 @@ $sequence "idle" {
 	fadeout 0.2
 	fps 30
 }
-
 $sequence "fire" {
 	"anims\vm_ripper_fire_rar.dmx"
 	fadein 0.2
 	fadeout 0.2
 	fps 30
 }
-
 $sequence "melee" {
 	"anims\vm_ripper_melee_rar.dmx"
 	fadein 0.2
 	fadeout 0.2
 	fps 30
 }
-
 $sequence "reload" {
 	"anims\vm_ripper_reload_rar.dmx"
 	fadein 0.2
 	fadeout 0.2
 	fps 30
 }
-
-$sequence "reload_empty" {
-	"anims\vm_ripper_reload_empty_rar.dmx"
-	fadein 0.2
-	fadeout 0.2
-	fps 30
-}
-
 $sequence "pullout_first" {
 	"anims\vm_ripper_pullout_first_rar.dmx"
 	fadein 0.2
 	fadeout 0.2
 	fps 30
 }
-
 $sequence "putaway" {
 	"anims\vm_ripper_putaway_rar.dmx"
 	fadein 0.2
 	fadeout 0.2
 	fps 30
 }
-
 $sequence "pullout" {
 	"anims\vm_ripper_pullout_rar.dmx"
 	fadein 0.2
 	fadeout 0.2
 	fps 30
 }
-
 $sequence "toggle_on" {
 	"anims\vm_ripper_toggle_on_rar.dmx"
 	fadein 0.2
 	fadeout 0.2
 	fps 30
 }
-
 $sequence "toggle_off" {
 	"anims\vm_ripper_toggle_off_rar.dmx"
 	fadein 0.2
 	fadeout 0.2
 	fps 30
 }
-
 $sequence "fire_ar" {
 	"anims\vm_ripper_fire_ar_rar.dmx"
 	fadein 0.2
 	fadeout 0.2
 	fps 30
 }
-
 $sequence "idle_ar" {
 	"anims\vm_ripper_idle_ar_rar.dmx"
 	fadein 0.2
 	fadeout 0.2
 	fps 30
 }
-
+$sequence "ads_fire" {
+	"anims\vm_ripper_ads_fire_rar.dmx"
+	fadein 0.2
+	fadeout 0.2
+	fps 30
+}
+$sequence "ads_fire_ar" {
+	"anims\vm_ripper_ads_fire_ar_rar.dmx"
+	fadein 0.2
+	fadeout 0.2
+	fps 30
+}
+$sequence "pullout_ar" {
+	"anims\vm_ripper_pullout_ar_rar.dmx"
+	fadein 0.2
+	fadeout 0.2
+	fps 30
+}
 $sequence "melee_ar" {
 	"anims\vm_ripper_melee_ar_rar.dmx"
 	fadein 0.2
 	fadeout 0.2
 	fps 30
 }
-
 $sequence "reload_ar" {
 	"anims\vm_ripper_reload_ar_rar.dmx"
 	fadein 0.2
 	fadeout 0.2
 	fps 30
 }
-
-$sequence "reload_empty_ar" {
-	"anims\vm_ripper_reload_empty_ar_rar.dmx"
-	fadein 0.2
-	fadeout 0.2
-	fps 30
-}
-
 $sequence "putaway_ar" {
 	"anims\vm_ripper_putaway_ar_rar.dmx"
 	fadein 0.2
 	fadeout 0.2
 	fps 30
 }
-
 
 
 

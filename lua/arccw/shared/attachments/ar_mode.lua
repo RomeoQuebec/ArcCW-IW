@@ -3,7 +3,8 @@ att.Icon = Material("entities/acwatt_fcg_dualstage.png", "smooth mips")
 att.Description = "I don't really know how to integrate this shit to the main weapon."
 att.Desc_Pros = {
     "You are able to shoot in close and medium-long range",
-    "-30% recoil with AR Mode"
+    "-30% recoil with AR Mode",
+    "Fuck side-recoil"
 }
 att.Desc_Cons = {
     "decreased fire rate for AR Mode",
@@ -27,7 +28,7 @@ att.AutoStats = true
 
 att.Hook_ModifyRecoil = function(wep)
     if wep:GetCurrentFiremode().Mode == 1 then
-        return {Recoil = 0.85, RecoilSide = 0.7, VisualRecoilMult = 0.8}
+        return {Recoil = 0.85, RecoilSide = 0, VisualRecoilMult = 0.8}
     end
 end
 

@@ -20,7 +20,7 @@ SWEP.NPCWeight = 100
 SWEP.UseHands = true
 
 SWEP.ViewModel = "models/the_RPR_EVO.mdl"
-SWEP.WorldModel = "models/weapons/arccw/slog_csanal/c_gluke.mdl"
+SWEP.WorldModel = "models/the_RPR_EVO.mdl"
 SWEP.ViewModelFOV = 70
 
 SWEP.Damage = 30
@@ -57,7 +57,7 @@ SWEP.Firemodes = {
     }
 }
 
-SWEP.AccuracyMOA = 20 -- accuracy in Minutes of Angle. There are 60 MOA in a degree.
+SWEP.AccuracyMOA = 10 -- accuracy in Minutes of Angle. There are 60 MOA in a degree.
 SWEP.HipDispersion = 200 -- inaccuracy added by hip firing.
 SWEP.MoveDispersion = 250
 
@@ -129,8 +129,23 @@ SWEP.WorldModelOffset = {
 
 SWEP.Hook_TranslateAnimation = function(wep, anim)
     local fucking = wep.Attachments[1].Installed == "ar_mode"
-        if fucking and wep:GetCurrentFiremode().Mode == 1 then
+    if fucking and wep:GetCurrentFiremode().Mode == 1 then
+        wep.Damage = 34
+        wep.DamageMin = 30
+        wep.IronSightStruct = {
+            Pos = Vector(-3.25, 5.025, -10.90),
+            Ang = Angle(3, 0, 0),
+            Magnification = 2,
+            CrosshairInSights = false,
+        }
         return anim .. "_ar"
+    else
+        wep.IronSightStruct = {
+            Pos = Vector(-3.075, 5.792, -10.2),
+            Ang = Angle(0.5, 0, 0),
+            Magnification = 2,
+            CrosshairInSights = false,
+        }
     end
 end
 
@@ -287,10 +302,6 @@ SWEP.Animations = {
     },
     ["fire_ar"] = {
         Source = "fire_ar",
-        ShellEjectAt = 0,
-    },
-    ["fire_empty"] = {
-        Source = "fire_last",
         ShellEjectAt = 0,
     },
     ["reload_empty_ar"] = {

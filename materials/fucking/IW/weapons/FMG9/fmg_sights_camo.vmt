@@ -1,0 +1,6 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "fucking/IW/weapons/FMG9/fmg_sights_c_fmg_sights_sg_packed_cs"
+	"$normalmap" "fucking/IW/weapons/FMG9/fmg_sights_n_e9ab1d1d_packed_nog"
+	"$nocull" 1
+}
